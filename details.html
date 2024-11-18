@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Gói Bảo Hiểm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .back-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+        .package-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .package-image {
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .package-info {
+            max-width: 600px;
+        }
+        .package-info h2 {
+            color: #333;
+        }
+        .package-info p {
+            color: #555;
+        }
+        .package-info .price {
+            font-size: 24px;
+            color: #d9534f;
+        }
+        .package-info .btn {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .package-info .btn:hover {
+            background-color: #218838;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 220px;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 10px 0;
+        }
+
+        .footer-section ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-section a {
+            color: #ecf0f1;
+        }
+
+        .footer-section a:hover {
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="back-button">Quay lại trang chủ</a>
+    <div class="package-details">
+        <img src="" alt="Gói Bảo Hiểm" class="package-image" id="package-image">
+        <div class="package-info">
+            <h2 id="package-name">Tên Gói</h2>
+            <p id="package-description">Mô tả chi tiết về gói bảo hiểm.</p>
+            <p class="price" id="package-price">Giá</p>
+            <a href="registration.html" class="btn">Đăng Ký Ngay</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Lấy tham số từ URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const package = urlParams.get('package');
+
+    // Tạo dữ liệu giả định cho các gói bảo hiểm
+    const packages = {
+        basic: {
+            name: "Gói Cơ Bản",
+            description: "Bảo vệ sức khỏe cơ bản cho cá nhân và gia đình.",
+            price: "500.000 VND/năm",
+            image: "img/d44abde729ba4ab9c905d01179538267.jpg"
+        },
+        standard: {
+            name: "Gói Tiêu Chuẩn",
+            description: "Bảo hiểm toàn diện với chi phí hợp lý.",
+            price: "1.200.000 VND/năm",
+            image: "img/tieu-chuan.jpg"
+        },
+        premium: {
+            name: "Gói Cao Cấp",
+            description: "Quyền lợi bảo hiểm tối ưu với mức bảo vệ cao nhất.",
+            price: "5.000.000 VND/năm",
+            image: "img/cao-cap.png"
+        },
+        health: {
+            name: "Gói Sức Khỏe",
+            description: "Bảo vệ sức khỏe dài hạn với quyền lợi tối đa.",
+            price: "2.000.000 VND/năm",
+            image: "img/con-mguoi.jpg"
+        },
+        family: {
+            name: "Gói Gia Đình",
+            description: "Bảo hiểm toàn diện cho mọi thành viên trong gia đình.",
+            price: "3.500.000 VND/năm",
+            image: "img/gia dinh.png"
+        },
+        travel: {
+            name: "Gói Du Lịch",
+            description: "Bảo vệ an toàn trong mọi chuyến đi.",
+            price: "1.000.000 VND/năm",
+            image: "img/du-lich.jpg"
+        },
+        life: {
+            name: "Gói Nhân Thọ",
+            description: "Bảo vệ tài chính lâu dài cho gia đình bạn.",
+            price: "4.000.000 VND/năm",
+            image: "img/nhan-tho.png"
+        },
+        car: {
+            name: "Gói Xe Hơi",
+            description: "Bảo hiểm toàn diện cho xe ô tô của bạn.",
+            price: "2.500.000 VND/năm",
+            image: "img/xe-hoi.jpg"
+        },
+        property: {
+            name: "Gói Tài Sản",
+            description: "Bảo vệ tài sản của bạn trước mọi rủi ro.",
+            price: "3.000.000 VND/năm",
+            image: "img/tai-san.png"
+        },
+        education: {
+            name: "Gói Giáo Dục",
+            description: "Đầu tư giáo dục cho con cái với chi phí tối ưu.",
+            price: "2.800.000 VND/năm",
+            image: "img/an-toan.jpg"
+        },
+        supplementary: {
+            name: "Gói Bổ Sung",
+            description: "Các gói bảo hiểm bổ sung tùy chọn theo nhu cầu.",
+            price: "1.500.000 VND/năm",
+            image: "img/du-lich.jpg"
+        }
+    };
+
+    // Hiển thị thông tin gói bảo hiểm dựa trên tham số 'package'
+    if (packages[package]) {
+        const pkg = packages[package];
+        document.getElementById('package-name').textContent = pkg.name;
+        document.getElementById('package-description').textContent = pkg.description;
+        document.getElementById('package-price').textContent = pkg.price;
+        document.getElementById('package-image').src = pkg.image;
+    }
+</script>
+
+<footer>
+    <div class="footer-container">
+        <!-- Chuyên mục thông tin về công ty -->
+        <div class="footer-section">
+            <h3>Về Công Ty</h3>
+            <ul>
+                <li><a href="about-us.html">Về chúng tôi</a></li>
+                <li><a href="career.html">Cơ hội nghề nghiệp</a></li>
+                <li><a href="news.html">Tin tức</a></li>
+            </ul>
+        </div>
+
+        <!-- Chuyên mục sản phẩm bảo hiểm -->
+        <div class="footer-section">
+            <h3>Sản Phẩm Bảo Hiểm</h3>
+            <ul>
+                <li><a href="health-accident.html">Sức khỏe và Tai nạn</a></li>
+                <li><a href="investment.html">Tích lũy & Đầu tư</a></li>
+                <li><a href="education.html">Giáo dục</a></li>
+                <li><a href="supplementary.html">Sản phẩm bổ sung</a></li>
+            </ul>
+        </div>
+
+        <!-- Thông tin liên hệ -->
+        <div class="footer-section">
+            <h3>Liên Hệ</h3>
+            <ul>
+                <li><a href="contact.html">Liên hệ</a></li>
+                <li>Công ty XYZ</li>
+                <li>Địa chỉ: 123 Phố ABC, Thành phố HCM</li>
+                <li>Điện thoại: 0901234567</li>
+                <li>Email: info@xyz.com</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

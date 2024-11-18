@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Bảo Hiểm Trực Tuyến</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+    
+        #benefits {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+#benefits h2 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.benefit-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cột */
+    gap: 20px;
+    max-width: 1200px; /* Tối đa chiều rộng */
+    margin: 0 auto; /* Căn giữa */
+}
+
+.benefit {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.benefit:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.benefit img {
+    width: 60px;
+    margin-bottom: 20px;
+}
+
+.benefit h3 {
+    font-size: 22px;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.benefit p {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+@media (max-width: 768px) {
+    #benefits h2 { font-size: 28px; }
+    .benefit { padding: 15px; }
+    .benefit h3 { font-size: 20px; }
+    .benefit p { font-size: 13px; }
+
+    .benefit-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 cột khi màn hình nhỏ */
+    }
+}
+
+@media (max-width: 480px) {
+    .benefit-list {
+        grid-template-columns: 1fr; /* 1 cột khi màn hình rất nhỏ */
+    }
+}
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #3498db;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+/* CSS cho Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #eee;
+}
+
+/* Logo */
+.logo img {
+    width: 150px; /* Điều chỉnh kích thước logo */
+    height: auto;
+}
+
+/* Thanh Tìm Kiếm */
+.search-bar form {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px;
+    font-size: 16px;
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.search-bar button i {
+    margin-right: 5px;
+}
+
+.search-bar button:hover {
+    background-color: #2980b9;
+}
+
+/* Điều chỉnh các liên kết trong navigation */
+nav ul {
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+nav ul li a i {
+    margin-right: 5px;
+}
+
+.logo img {
+    max-width: 150px; 
+    height: auto;
+}
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 40px 20px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    width: 22%;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #3498db;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    color: #bdc3c7;
+}
+
+/* Đảm bảo footer không bị che bởi phần content */
+body {
+    margin-bottom: 200px; /* Giảm khoảng cách giữa footer và nội dung */
+}
+
+/* Body and HTML */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Bố cục của trang */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Các phần khác của trang */
+main {
+    flex: 1; /* Phần này sẽ chiếm không gian còn lại */
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 40px 20px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    width: 22%;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #3498db;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    color: #bdc3c7;
+}
+/* Định dạng chung cho menu */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    font-family: Arial, sans-serif;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0;
+}
+
+nav ul li a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #000; /* Màu chữ đen */
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f39c12; /* Màu chữ khi hover */
+}
+
+/* Dropdown menu ẩn mặc định */
+nav ul .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    min-width: 200px;
+    background: none; /* Xóa background */
+    border: 1px solid #ddd; /* Thêm đường viền mỏng */
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+nav ul .dropdown-menu li a {
+    padding: 10px 15px;
+    color: #000; /* Màu chữ đen */
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    display: block;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+nav ul .dropdown-menu li a:hover {
+    color: #f39c12; /* Màu chữ khi hover */
+    background-color: #fdfdfd; /* Màu nền khi hover */
+}
+
+/* Loại bỏ đường viền cuối cùng */
+nav ul .dropdown-menu li:last-child a {
+    border-bottom: none;
+}
+
+/* Hiển thị dropdown menu khi hover */
+nav ul li.dropdown:hover .dropdown-menu {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Hiệu ứng khi menu xuất hiện */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Định dạng phần dropdown icon */
+nav ul li a i {
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+
+    </style>
+</head>
+
+<body>
+        <header>
+            <!-- Logo Web -->
+            <div class="logo">
+                <a href="index.html"><img src="img/logo.jpg"  ></a>
+            </div>
+        
+            <!-- Thanh Tìm Kiếm -->
+            <div class="search-bar">
+                <form action="search.html" method="get">
+                    <input type="text" name="query" placeholder="Tìm kiếm..." required>
+                    <button type="submit"><i class="fas fa-search"></i> Tìm</button>
+                </form>
+            </div>
+        
+            <!-- Thanh Điều Hướng -->
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Trang Chủ</a></li>
+                    <li><a href="support.html"><i class="fas fa-life-ring"></i> Giới Thiệu</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Liên Hệ</a></li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-box"></i> Sản Phẩm</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="details.html?package=basic">Gói Cơ Bản</a></li>
+                            <li><a href="details.html?package=standard">Gói Tiêu Chuẩn</a></li>
+                            <li><a href="details.html?package=premium">Gói Cao Cấp</a></li>
+                            <li><a href="details.html?package=health">Gói Sức Khỏe</a></li>
+                            <li><a href="details.html?package=family">Gói Gia Đình</a></li>
+                            <li><a href="details.html?package=travel">Gói Du Lịch</a></li>
+                            <li><a href="details.html?package=life">Gói Nhân Thọ</a></li>
+                            <li><a href="details.html?package=car">Gói Xe Hơi</a></li>
+                            <li><a href="details.html?package=property">Gói Tài Sản</a></li>
+                            <li><a href="details.html?package=education">Gói Giáo Dục</a></li>
+                            <li><a href="details.html?package=supplementary">Gói Bổ Sung</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="site-map.html"><i class="fas fa-sitemap"></i> Site Map</a></li>
+                    <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Đăng Nhập</a></li>
+                    <li><a href="register.html"><i class="fas fa-user-plus"></i> Đăng Ký</a></li>
+
+                </ul>
+            </nav>            
+        </header>
+ 
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="img/d44abde729ba4ab9c905d01179538267.jpg" alt="Gói Cơ Bản">
+        </div>
+        <div class="mySlides fade">
+            <img src="img/tieu-chuan.jpg" alt="Gói Tiêu Chuẩn">
+        </div>
+        <div class="mySlides fade">
+            <img src="img/cao-cap.png" alt="Gói Cao Cấp">
+        </div>
+        <div class="mySlides fade">
+            <img src="img/con-mguoi.jpg" alt="Gói Bảo Hiểm Sức Khỏe">
+        </div>
+        <div class="mySlides fade">
+            <img src="img/gia dinh.png" alt="Gói Gia Đình">
+        </div>
+        <div class="mySlides fade">
+            <img src="img/du-lich.jpg" alt="Gói Du Lịch">
+        </div>
+        <div class="mySlides fade">
+            <img src="img/nhan-tho.png" alt="Gói Bảo Hiểm Nhân Thọ">
+        </div>
+        <div class="mySlides fade">
+            <img src="img/xe-hoi.jpg" alt="Gói Bảo Hiểm Xe Hơi">
+        </div>
+        <div class="mySlides fade">
+            <img src="img/tai-san.png" alt="Gói Bảo Hiểm Tài Sản">
+        </div>
+    </div>
+
+    <main>
+ 
+<!-- Phần Các Sản Phẩm Bảo Hiểm -->
+<section id="packages" class="packages">
+    <h2>Các Gói Bảo Hiểm Phổ Biến</h2>
+    <div class="package-list">
+        <div class="package">
+            <img src="img/d44abde729ba4ab9c905d01179538267.jpg" alt="Gói Cơ Bản" class="package-image">
+            <h3>Gói Cơ Bản</h3>
+            <p>Bảo vệ sức khỏe cơ bản cho cá nhân và gia đình.</p>
+            <p class="price">500.000 VND/năm</p>
+            <a href="details.html?package=basic" class="btn">Đăng Ký</a>
+        </div>
+        <div class="package">
+            <img src="img/tieu-chuan.jpg" alt="Gói Tiêu Chuẩn" class="package-image">
+            <h3>Gói Tiêu Chuẩn</h3>
+            <p>Bảo hiểm toàn diện với chi phí hợp lý.</p>
+            <p class="price">1.200.000 VND/năm</p>
+            <a href="details.html?package=standard" class="btn">Đăng Ký</a>
+        </div>
+        <div class="package">
+            <img src="img/cao-cap.png" alt="Gói Cao Cấp" class="package-image">
+            <h3>Gói Cao Cấp</h3>
+            <p>Quyền lợi bảo hiểm tối ưu với mức bảo vệ cao nhất.</p>
+            <p class="price">5.000.000 VND/năm</p>
+            <a href="details.html?package=premium" class="btn">Đăng Ký</a>
+        </div>
+        <div class="package">
+            <img src="img/con-mguoi.jpg" alt="Gói Sức Khỏe" class="package-image">
+            <h3>Gói Sức Khỏe</h3>
+            <p>Bảo vệ sức khỏe dài hạn với quyền lợi tối đa.</p>
+            <p class="price">2.000.000 VND/năm</p>
+            <a href="details.html?package=health" class="btn">Đăng Ký</a>
+        </div>
+        <div class="package">
+            <img src="img/gia dinh.png" alt="Gói Gia Đình" class="package-image">
+            <h3>Gói Gia Đình</h3>
+            <p>Bảo hiểm toàn diện cho mọi thành viên trong gia đình.</p>
+            <p class="price">3.500.000 VND/năm</p>
+            <a href="details.html?package=family" class="btn">Đăng Ký</a>
+        </div>
+        <div class="package">
+            <img src="img/du-lich.jpg" alt="Gói Du Lịch" class="package-image">
+            <h3>Gói Du Lịch</h3>
+            <p>Bảo vệ an toàn trong mọi chuyến đi.</p>
+            <p class="price">1.000.000 VND/năm</p>
+            <a href="details.html?package=travel" class="btn">Đăng Ký</a>
+        </div>
+        <div class="package">
+            <img src="img/nhan-tho.png" alt="Gói Nhân Thọ" class="package-image">
+            <h3>Gói Nhân Thọ</h3>
+            <p>Bảo vệ tài chính lâu dài cho gia đình bạn.</p>
+            <p class="price">4.000.000 VND/năm</p>
+            <a href="details.html?package=life" class="btn">Đăng Ký</a>
+        </div>
+        <div class="package">
+            <img src="img/xe-hoi.jpg" alt="Gói Xe Hơi" class="package-image">
+            <h3>Gói Xe Hơi</h3>
+            <p>Bảo hiểm toàn diện cho xe ô tô của bạn.</p>
+            <p class="price">2.500.000 VND/năm</p>
+            <a href="details.html?package=car" class="btn">Đăng Ký</a>
+        </div>
+        <div class="package">
+            <img src="img/tai-san.png" alt="Gói Tài Sản" class="package-image">
+            <h3>Gói Tài Sản</h3>
+            <p>Bảo vệ tài sản của bạn trước mọi rủi ro.</p>
+            <p class="price">3.000.000 VND/năm</p>
+            <a href="details.html?package=property" class="btn">Đăng Ký</a>
+        </div>
+        <div class="package">
+            <img src="img/an-toan.jpg" alt="Gói Giáo Dục" class="package-image">
+            <h3>Gói Giáo Dục</h3>
+            <p>Đầu tư giáo dục cho con cái với chi phí tối ưu.</p>
+            <p class="price">2.800.000 VND/năm</p>
+            <a href="details.html?package=education" class="btn">Đăng Ký</a>
+        </div>
+        <div class="package">
+            <img src="img/du-lich.jpg" alt="Gói Bổ Sung" class="package-image">
+            <h3>Gói Bổ Sung</h3>
+            <p>Các gói bảo hiểm bổ sung tùy chọn theo nhu cầu.</p>
+            <p class="price">1.500.000 VND/năm</p>
+            <a href="details.html?package=supplementary" class="btn">Đăng Ký</a>
+        </div>
+    </div>
+</section>
+
+
+        <!-- Phần Tiêu Chí Ưu Đãi -->
+        <section id="benefits" class="benefits">
+            <h2>Tại Sao Chọn Chúng Tôi</h2>
+            <div class="benefit-list">
+                <div class="benefit">
+                    <img src="img/dich-vu-nhanh.png" alt="Dịch Vụ Nhanh Chóng">
+                    <h3>Dịch Vụ Nhanh Chóng</h3>
+                    <p>Hỗ trợ xử lý yêu cầu bảo hiểm trong vòng 24 giờ.</p>
+                </div>
+                <div class="benefit">
+                    <img src="img/chi-phi.jpg" alt="Chi Phí Hợp Lý">
+                    <h3>Chi Phí Hợp Lý</h3>
+                    <p>Cung cấp các gói bảo hiểm với giá cạnh tranh.</p>
+                </div>
+                <div class="benefit">
+                    <img src="img/24-7.jpg" alt="Hỗ Trợ Khách Hàng 24/7">
+                    <h3>Hỗ Trợ Khách Hàng 24/7</h3>
+                    <p>Đội ngũ hỗ trợ luôn sẵn sàng giải đáp thắc mắc.</p>
+                </div>
+                 <div class="benefit">
+                    <img src="img/an-toan.jpg" alt="An Toàn Cao">
+                    <h3>An Toàn Cao</h3>
+                    <p>Chúng tôi đảm bảo bảo vệ tài chính của bạn với các gói bảo hiểm an toàn và bảo mật nhất.</p>
+                </div>
+                <div class="benefit">
+                    <img src="img/pham-vi.jpg" alt="Phạm Vi Bảo Hiểm Rộng">
+                    <h3>Phạm Vi Bảo Hiểm Rộng</h3>
+                    <p>Chúng tôi cung cấp các gói bảo hiểm với phạm vi bảo vệ rộng lớn, từ sức khỏe đến tài sản.</p>
+                </div>
+                <div class="benefit">
+                    <img src="img/linh-hoat.jpg" alt="Linh Hoạt">
+                    <h3>Linh Hoạt</h3>
+                    <p>Các gói bảo hiểm của chúng tôi có thể điều chỉnh linh hoạt theo nhu cầu của bạn.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-container">
+                <!-- Chuyên mục thông tin về công ty -->
+                <div class="footer-section">
+                    <h3>Về Công Ty</h3>
+                    <ul>
+                        <li><a href="about-us.html">Về chúng tôi</a></li>
+                        <li><a href="career.html">Cơ hội nghề nghiệp</a></li>
+                        <li><a href="news.html">Tin tức</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Chuyên mục sản phẩm bảo hiểm -->
+                <div class="footer-section">
+                    <h3>Sản Phẩm Bảo Hiểm</h3>
+                    <ul>
+                        <li><a href="health-accident.html">Sức khỏe và Tai nạn</a></li>
+                        <li><a href="investment.html">Tích lũy & Đầu tư</a></li>
+                        <li><a href="education.html">Giáo dục</a></li>
+                        <li><a href="supplementary.html">Sản phẩm bổ sung</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Thông tin liên hệ -->
+                <div class="footer-section">
+                    <h3>Liên Hệ</h3>
+                    <ul>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                        <li>Công ty TNHH TP Bảo hiểm Việt Nam</li>
+                        <li>Tổng đài CSKH: <a href="tel:+1900000900">1900000 900</a></li>
+                        <li>Email: <a href="mailto:chamsockhachhang@.vn">chamsockhachhang@.vn</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Liên kết khác -->
+                <div class="footer-section">
+                    <h3>Liên Kết Khác</h3>
+                    <ul>
+                        <li><a href="terms-of-use.html">Điều khoản sử dụng</a></li>
+                        <li><a href="privacy-policy.html">Chính sách bảo mật thông tin và bảo vệ dữ liệu cá nhân</a></li>
+                        <li><a href="site-map.html">Sơ đồ Website</a></li>
+                        <li><a href="disclaimer.html">Miễn trừ trách nhiệm</a></li>
+                        <li><a href="online-insurance-process.html">Quy trình tham gia bảo hiểm trực tuyến</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        
+    </main>
+
+    <footer>
+     </footer>
+
+    <script>
+        // JavaScript cho slideshow
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 2000); // Thay đổi slide mỗi 2 giây
+        }
+    </script>
+</body>
+
+</html>

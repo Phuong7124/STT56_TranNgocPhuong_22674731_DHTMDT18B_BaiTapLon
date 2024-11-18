@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Gói Bảo Hiểm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin: 0 auto;
+        }
+        .form-container input,
+        .form-container select,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-container button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-container button:hover {
+            background-color: #2980b9;
+        }
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #3498db;
+        }
+        .payment-container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Đăng Ký Gói Bảo Hiểm</h2>
+
+    <div class="form-container">
+        <form id="personal-info-form" onsubmit="showPaymentForm(event)">
+            <label for="name">Tên đầy đủ</label>
+            <input type="text" id="name" name="name" required placeholder="Nhập tên của bạn">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Nhập email của bạn">
+
+            <label for="phone">Số điện thoại</label>
+            <input type="text" id="phone" name="phone" required placeholder="Nhập số điện thoại của bạn">
+
+            <label for="address">Địa chỉ</label>
+            <textarea id="address" name="address" required placeholder="Nhập địa chỉ của bạn"></textarea>
+
+            <label for="payment-method">Phương thức thanh toán</label>
+            <select id="payment-method" name="payment-method" required>
+                <option value="bank-transfer">Chuyển khoản ngân hàng</option>
+                <option value="credit-card">Thẻ tín dụng</option>
+                <option value="paypal">Paypal</option>
+            </select>
+
+            <button type="submit">Đăng Ký</button>
+        </form>
+    </div>
+
+    <div class="payment-container" id="payment-container">
+        <h3>Nhập Thông Tin Thẻ Thanh Toán</h3>
+        <form id="payment-info-form" onsubmit="submitPaymentInfo(event)">
+            <label for="card-number">Số thẻ</label>
+            <input type="text" id="card-number" name="card-number" required placeholder="Nhập số thẻ của bạn">
+
+            <label for="expiry-date">Ngày hết hạn</label>
+            <input type="text" id="expiry-date" name="expiry-date" required placeholder="MM/YY">
+
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" required placeholder="Nhập mã CVV">
+
+            <button type="submit">Thanh toán</button>
+        </form>
+    </div>
+
+    <a href="index.html" class="back-btn">Quay lại trang chủ</a>
+
+    <script>
+        // Hiển thị form thanh toán sau khi điền thông tin cá nhân
+        function showPaymentForm(event) {
+            event.preventDefault(); // Ngừng hành động mặc định của form
+            document.getElementById('payment-container').style.display = 'block'; // Hiển thị form thanh toán
+            document.getElementById('personal-info-form').style.display = 'none'; // Ẩn form thông tin cá nhân
+        }
+
+        // Thực hiện chuyển hướng sau khi thanh toán xong
+        function submitPaymentInfo(event) {
+            event.preventDefault(); // Ngừng hành động mặc định của form
+            window.location.href = 'confirmation.html'; // Chuyển đến trang xác nhận
+        }
+    </script>
+
+</body>
+</html>

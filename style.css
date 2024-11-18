@@ -1,0 +1,355 @@
+/* Thiết lập chung */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #0073e6;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Phần Sản Phẩm */
+.packages {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.package-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.package {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.package:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Phần Ưu Đãi */
+.benefits {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.benefit-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.benefit img {
+    width: 80px;
+    margin-bottom: 15px;
+}
+
+/* Phần Liên Hệ */
+.contact {
+    padding: 40px 20px;
+    background-color: #0073e6;
+    color: white;
+    text-align: center;
+}
+
+.contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.contact form {
+    margin-top: 20px;
+}
+
+.contact label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.contact button {
+    background-color: white;
+    color: #0073e6;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact button:hover {
+    background-color: #005bb5;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+/* CSS cho slideshow */
+.slideshow-container {
+    position: relative;
+    width: 80%; /* Điều chỉnh kích thước cho phù hợp */
+    margin: auto; /* Căn giữa theo chiều ngang */
+    overflow: hidden; /* Ẩn phần dư thừa khi chuyển đổi hình ảnh */
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    height: 400px; /* Đặt chiều cao cho slideshow */
+}
+
+.mySlides {
+    display: none;
+}
+
+.slideshow-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Tạo góc bo tròn cho hình ảnh */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tạo bóng đổ cho hình ảnh */
+}
+
+nav ul li a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #f9f9f9; /* Adjust the color */
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff6600; /* Color on hover */
+}
+.package-image {
+    width: 80%; /* Đặt chiều rộng của hình ảnh là 80% */
+    height: auto; /* Giữ tỷ lệ khung hình của ảnh */
+    margin-bottom: 10px; /* Khoảng cách dưới hình ảnh */
+    border-radius: 8px; /* Tạo góc bo tròn cho hình ảnh */
+    display: block; /* Đảm bảo hình ảnh không bị lấn ra ngoài */
+    margin-left: auto; /* Căn giữa hình ảnh */
+    margin-right: auto; /* Căn giữa hình ảnh */
+}
+
+/* CSS cho phần Hỗ Trợ Khách Hàng */
+.contact {
+    background-color: #f9f9f9; /* Màu nền sáng cho phần này */
+    padding: 40px;
+    border-radius: 10px; /* Bo góc để mềm mại hơn */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Tạo bóng đổ cho phần này */
+    margin: 40px 0; /* Khoảng cách phía trên và dưới */
+    text-align: center; /* Căn giữa nội dung */
+}
+
+.contact h2 {
+    font-size: 28px;
+    color: #333; /* Màu chữ tối cho tiêu đề */
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+}
+
+.contact p {
+    font-size: 16px;
+    color: #666; /* Màu chữ nhẹ cho đoạn văn */
+    margin-bottom: 20px;
+    line-height: 1.6; /* Tăng khoảng cách giữa các dòng văn bản */
+}
+
+.contact ul {
+    list-style: none; /* Bỏ dấu chấm ở đầu danh sách */
+    padding: 0;
+}
+
+.contact ul li {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0; /* Khoảng cách giữa các mục trong danh sách */
+    display: flex;
+    align-items: center; /* Căn giữa các phần tử của danh sách */
+    justify-content: center; /* Căn giữa phần tử */
+}
+
+.contact ul li::before {
+    content: "📞"; /* Biểu tượng điện thoại */
+    font-size: 24px;
+    margin-right: 10px; /* Khoảng cách giữa biểu tượng và text */
+}
+
+.contact ul li a {
+    text-decoration: none;
+    color: #007BFF; /* Màu chữ khi có liên kết */
+    font-weight: bold;
+}
+
+.contact ul li a:hover {
+    color: #0056b3; /* Màu chữ khi hover */
+    text-decoration: underline; /* Gạch chân khi hover */
+}
+
+.contact ul li:first-child::before {
+    content: "📧"; /* Biểu tượng email cho email */
+}
+
+.contact ul li:nth-child(2)::before {
+    content: "📱"; /* Biểu tượng điện thoại cho hotline */
+}
+
+.contact ul li:nth-child(3)::before {
+    content: "📍"; /* Biểu tượng địa chỉ */
+}
+
+/* Cấu trúc chung của trang */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Tiêu đề của trang */
+h2, h3 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Căn chỉnh mô tả và giá */
+#package-name {
+    font-size: 28px;
+    color: #3498db;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#package-description {
+    font-size: 18px;
+    color: #7f8c8d;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#package-price {
+    font-size: 22px;
+    color: #e74c3c;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Phần chi tiết gói bảo hiểm */
+.details {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 30px;
+    width: 80%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Danh sách quyền lợi, điều kiện, tiện ích */
+.details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.details ul li {
+    font-size: 16px;
+    color: #34495e;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.details ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #2ecc71;
+    font-size: 18px;
+}
+
+/* Nút quay lại trang chủ */
+.btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* Cải thiện responsive */
+@media (max-width: 768px) {
+    #package-name {
+        font-size: 24px;
+    }
+    #package-description {
+        font-size: 16px;
+    }
+    #package-price {
+        font-size: 20px;
+    }
+    .details {
+        width: 90%;
+    }
+}

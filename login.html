@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        .form-container h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .form-container a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+ 
+
+    <main>
+        <div class="form-container">
+            <h2>Đăng Nhập</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Tên Đăng Nhập:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mật Khẩu:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Đăng Nhập">
+                </div>
+            </form>
+            <a href="register.html">Chưa có tài khoản? Đăng Ký</a>
+        </div>
+    </main>
+
+  
+
+    <script>
+        // Kiểm tra thông tin đăng nhập với thông tin đã lưu
+        document.getElementById("login-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Ngừng hành động mặc định của form
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            var registeredUsername = localStorage.getItem("registeredUsername");
+            var registeredPassword = localStorage.getItem("registeredPassword");
+
+            if (username === registeredUsername && password === registeredPassword) {
+                alert("Đăng nhập thành công!");
+                window.location.href = "index.html"; // Chuyển hướng đến trang index.html
+            } else {
+                alert("Thông tin đăng nhập không chính xác!");
+            }
+        });
+    </script>
+</body>
+
+</html>

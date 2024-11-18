@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        .contact-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .contact-container input,
+        .contact-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .contact-container button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .contact-container button:hover {
+            background-color: #2980b9;
+        }
+
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #3498db;
+        }
+
+        .contact-info {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 10px 0;
+        }
+
+        .footer-section ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-section a {
+            color: #ecf0f1;
+        }
+
+        .footer-section a:hover {
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Liên Hệ Với Chúng Tôi</h2>
+
+    <div class="contact-container">
+        <form action="submit_contact.php" method="POST">
+            <label for="name">Tên đầy đủ</label>
+            <input type="text" id="name" name="name" required placeholder="Nhập tên của bạn">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Nhập email của bạn">
+
+            <label for="subject">Chủ đề</label>
+            <input type="text" id="subject" name="subject" required placeholder="Nhập chủ đề câu hỏi">
+
+            <label for="message">Thông điệp</label>
+            <textarea id="message" name="message" rows="4" required placeholder="Nhập thông điệp của bạn"></textarea>
+
+            <button type="submit">Gửi Thông Tin</button>
+        </form>
+    </div>
+
+    
+    <a href="index.html" class="back-btn">Quay lại trang chủ</a>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Về Công Ty</h3>
+                <ul>
+                    <li><a href="about-us.html">Về chúng tôi</a></li>
+                    <li><a href="career.html">Cơ hội nghề nghiệp</a></li>
+                    <li><a href="news.html">Tin tức</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Sản Phẩm Bảo Hiểm</h3>
+                <ul>
+                    <li><a href="health-accident.html">Sức khỏe và Tai nạn</a></li>
+                    <li><a href="investment.html">Tích lũy & Đầu tư</a></li>
+                    <li><a href="education.html">Giáo dục</a></li>
+                    <li><a href="supplementary.html">Sản phẩm bổ sung</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Liên Hệ</h3>
+                <ul>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                    <li>Công ty TNHH Bảo hiểm Shinhan Life Việt Nam</li>
+                    <li>Tổng đài CSKH: <a href="tel:+1900998800">1900 998800</a></li>
+                    <li>Email: <a href="mailto:chamsockhachhang@shinhanlife.biz.vn">chamsockhachhang@shinhanlife.biz.vn</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Liên Kết Khác</h3>
+                <ul>
+                    <li><a href="terms-of-use.html">Điều khoản sử dụng</a></li>
+                    <li><a href="privacy-policy.html">Chính sách bảo mật thông tin và bảo vệ dữ liệu cá nhân</a></li>
+                    <li><a href="site-map.html">Sơ đồ Website</a></li>
+                    <li><a href="disclaimer.html">Miễn trừ trách nhiệm</a></li>
+                    <li><a href="online-insurance-process.html">Quy trình tham gia bảo hiểm trực tuyến</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
